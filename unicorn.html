@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>The content design unicorn: Christine Haiss</title>
+<meta name="description" content="What the job description really means. An article by Christine Haiss, Senior Content Designer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:light dark;--panel:#1a1a2e;
+  --ink:#1a1a2e;--ink-muted:#5a5a72;--ink-faint:#6e6e82;
+  --bg:#f8f7f4;--bg-card:#ffffff;
+  --accent:#3d5a80;--accent-light:#e8eff7;--accent-tag:#dce8f2;
+  --border:#e2e0dc;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --mono:'JetBrains Mono','Courier New',monospace;
+  --radius:8px;--radius-lg:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 32px}
+.nav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:var(--serif);font-size:1.05rem;color:var(--ink);text-decoration:none}
+.nav-back{font-size:0.875rem;color:var(--ink-muted);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:6px;transition:color 0.15s}
+.nav-back:hover{color:var(--ink)}
+
+.article-hero{max-width:760px;margin:0 auto;padding:72px 32px 48px}
+.article-eyebrow{font-family:var(--mono);font-size:0.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+.article-title{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:16px}
+.article-title em{font-style:italic;color:var(--accent)}
+.article-subtitle{font-size:1.2rem;color:var(--ink-muted);line-height:1.6;margin-bottom:32px;max-width:580px}
+.article-meta{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--border)}
+.article-meta-author{font-weight:600;font-size:0.9rem;color:var(--ink)}
+.article-meta-detail{font-size:0.85rem;color:var(--ink-faint)}
+
+.article-body{max-width:660px;margin:0 auto;padding:0 32px 80px}
+.article-body p{font-size:1.05rem;line-height:1.8;color:var(--ink-muted);margin-bottom:24px}
+.article-body p:first-child{font-size:1.15rem;color:var(--ink);font-weight:400}
+.article-body h2{font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin:48px 0 16px;letter-spacing:-0.01em}
+.article-body strong{color:var(--ink);font-weight:600}
+
+/* Comparison table */
+.table-wrap{overflow-x:auto;margin:32px 0;border-radius:var(--radius-lg);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:0.875rem;background:var(--bg-card)}
+thead tr{background:var(--accent);color:white}
+thead th{padding:12px 16px;text-align:left;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;text-transform:uppercase}
+thead th:first-child{background:var(--ink);min-width:140px}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:last-child{border-bottom:none}
+tbody td{padding:12px 16px;color:var(--ink-muted);line-height:1.5;vertical-align:top}
+tbody td:first-child{font-weight:600;color:var(--ink);background:#fafaf9;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em}
+tbody tr:hover td{background:#f5f4f1}
+tbody tr:hover td:first-child{background:#f0ede8}
+
+/* Mobile table */
+@media(max-width:600px){
+  .table-wrap{border:none;border-radius:0;margin:24px -32px}
+  table{display:block}
+  thead{display:none}
+  tbody{display:block}
+  tbody tr{display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:12px;padding:0}
+  tbody td{display:flex;padding:10px 16px;border-bottom:1px solid var(--border);gap:12px;font-size:0.875rem}
+  tbody td:last-child{border-bottom:none}
+  tbody td:first-child{background:var(--accent-light);color:var(--accent);font-size:0.75rem;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+  tbody td::before{content:attr(data-label);font-weight:600;color:var(--ink);min-width:100px;flex-shrink:0;font-size:0.8rem}
+  tbody td:first-child::before{display:none}
+}
+
+/* Pull quote */
+.pull-quote{border-left:4px solid var(--accent);padding:16px 24px;margin:32px 0;background:var(--accent-light);border-radius:0 var(--radius-lg) var(--radius-lg) 0}
+.pull-quote p{font-family:var(--serif);font-size:1.2rem;color:var(--ink);line-height:1.5;font-style:italic;margin:0}
+
+/* Back to portfolio CTA */
+.article-cta{background:var(--panel);margin:0}
+.article-cta-inner{max-width:760px;margin:0 auto;padding:56px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.article-cta h3{font-family:var(--serif);font-size:1.8rem;color:white;letter-spacing:-0.01em}
+.article-cta h3 em{font-style:italic;color:#7fc8f8}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#7fc8f8;color:var(--ink);padding:12px 24px;border-radius:var(--radius);font-size:0.95rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background 0.15s}
+.cta-btn:hover{background:#a8d9fa}
+
+footer{background:#111827;padding:20px 32px;text-align:center;font-size:0.8rem;color:#8494a6}
+footer a{color:#7a9bc0;text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:768px){
+  nav{padding:0 16px}
+  .article-hero,.article-body{padding-left:20px;padding-right:20px}
+  .article-hero{padding-top:48px}
+  .article-cta-inner{flex-direction:column;align-items:flex-start;padding:40px 20px}
+}
+
+@media (prefers-color-scheme: dark){
+  :root{--ink:#e8e8f0;--ink-muted:#a8a8bc;--ink-faint:#9494a8;--bg:#15151f;--bg-card:#1d1d2a;--accent:#8fb4dc;--accent-light:#243246;--accent-tag:#243246;--border:#32323f;--panel:#10101a}
+  nav{background:rgba(21,21,31,0.92)}
+  thead tr{background:#2e4665}
+  thead th:first-child{background:#10101a}
+  tbody td:first-child{background:#232330}
+  tbody tr:hover td{background:#20202d}
+  tbody tr:hover td:first-child{background:#262635}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Christine Haiss</a>
+    <a href="index.html" class="nav-back">&#8592; Back to portfolio</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-eyebrow">Perspective · Content Design</div>
+  <h1 class="article-title">The content design <em>unicorn:</em><br>what the job description really means</h1>
+  <p class="article-subtitle">It seems like more organisations are looking for a content designer who can do it all. Fewer can explain what "it all" actually means.</p>
+  <div class="article-meta">
+    <div>
+      <div class="article-meta-author">Christine Haiss</div>
+      <div class="article-meta-detail">Senior Content Designer · June 2026</div>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>Content in most organisations is split across two worlds that rarely talk to each other. In my experience, they only start talking when a content designer builds the bridge between them.</p>
+
+  <p><strong>Marketing owns the brand voice.</strong> Campaigns, announcements, content that builds awareness and drives consideration. Success looks like reach and engagement. The audience is browsing, considering, learning. You have their attention because they chose to give it.</p>
+
+  <p><strong>Product needs something different.</strong> User interface (UI) copy, error messages, onboarding flows, self-service guides. Content that helps someone complete a task under stress, often in a regulated environment where a wrong word has real consequences. Success looks like task completion and fewer support calls. The audience isn't browsing. They're doing something, deciding something, or urgently needing help.</p>
+
+  <div class="pull-quote">
+    <p>These two disciplines require different training, different instincts, and different ways of measuring value. But the market is increasingly asking for one person who can move fluently between both.</p>
+  </div>
+
+  <h2>What "do it all" looks like in a job ad</h2>
+
+  <p>Finding one person who can move between both worlds is hard enough. But the ads don't stop there. That person (if you find them) also needs to bring search engine optimisation (SEO) strategy and content management system (CMS) publishing capability to the table. The result's a job description that looks something like this: content designer who can write UI copy (the same work ads variously call UX writing, microcopy, or copywriting for app), develop content strategy, optimise for search engines and now for AI answer engines, publish in the CMS, read the analytics, meet accessibility standards, and align with brand voice. Regulated industry experience highly regarded, sometimes required: government, insurance, finance, superannuation. Oh, and the role is a single hire.</p>
+
+  <p>That list isn't speculative. It's drawn from real job ads and interviews I've recently experienced. The titles vary. The ask doesn't. And it keeps growing, because discovery itself is changing. Search engines are becoming answer engines, and generative engine optimisation (GEO) is starting to appear alongside SEO, ahead of most organisations even knowing to ask for it.</p>
+
+  <h2>How the two worlds compare</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Marketing &amp; Comms</th>
+          <th>Digital Content Design</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="">Primary goal</td>
+          <td data-label="Marketing &amp; Comms">Inform, promote, build brand</td>
+          <td data-label="Digital Content Design">Help users complete a task</td>
+        </tr>
+        <tr>
+          <td data-label="">Audience mindset</td>
+          <td data-label="Marketing &amp; Comms">Browsing, considering, learning</td>
+          <td data-label="Digital Content Design">Doing, deciding, needing help</td>
+        </tr>
+        <tr>
+          <td data-label="">Tone</td>
+          <td data-label="Marketing &amp; Comms">Brand voice, engaging, persuasive</td>
+          <td data-label="Digital Content Design">Clear, direct, reassuring</td>
+        </tr>
+        <tr>
+          <td data-label="">Format</td>
+          <td data-label="Marketing &amp; Comms">Articles, campaigns, announcements</td>
+          <td data-label="Digital Content Design">UI copy, error messages, guides</td>
+        </tr>
+        <tr>
+          <td data-label="">Success measure</td>
+          <td data-label="Marketing &amp; Comms">Reach, engagement, brand perception</td>
+          <td data-label="Digital Content Design">Task completion, self-service, reduced support calls</td>
+        </tr>
+        <tr>
+          <td data-label="">Lives in</td>
+          <td data-label="Marketing &amp; Comms">Website, email, social, print</td>
+          <td data-label="Digital Content Design">App, portal, product interfaces</td>
+        </tr>
+        <tr>
+          <td data-label="">Works with</td>
+          <td data-label="Marketing &amp; Comms">Marketing, brand, PR</td>
+          <td data-label="Digital Content Design">Product, design, engineering, legal</td>
+        </tr>
+        <tr>
+          <td data-label="">Discoverability</td>
+          <td data-label="Marketing &amp; Comms">Keyword strategy, campaign SEO</td>
+          <td data-label="Digital Content Design">Search intent, GEO, findable help content</td>
+        </tr>
+        <tr>
+          <td data-label="">Publishing</td>
+          <td data-label="Marketing &amp; Comms">CMS, email platforms, social tools</td>
+          <td data-label="Digital Content Design">CMS, design systems, production pipelines</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Discoverability and publishing are the odd ones out. They don't sit in either world. They run across both, which is exactly why organisations keep attaching them to whoever owns the content. SEO, GEO, analytics, and the CMS aren't a third discipline. They're the connective tissue between the two that already exist.</p>
+
+  <h2>The judgement is the job</h2>
+
+  <p>Understanding which mode you're in, and switching deliberately, is the skill organisations are actually looking for. Which is worth keeping in proportion: the centre of this role is the craft. Knowing what to say, to whom, in what moment, and what success looks like when you're done. Search and publishing capabilities matter, but they're extensions of that judgement, not substitutes for it. A designer who understands search intent already understands their reader. A designer who has structured content in one system can structure it in any of them. The tools transfer because the judgement is what's doing the work.</p>
+
+  <p>Here's a small proof of how low the tooling bar has dropped. This article lives on a hand-built page, coded with AI assistance and shipped through GitHub Pages in a weekend. Knowing what the page should say, who it's for, and why the structure works the way it does took twelve years. The tools have never been the hard part.</p>
+
+  <p>The unicorn isn't a mythical creature. But they're rare, because the combination takes years to build across genuinely different environments: regulated industries where compliance reviews every word, research that's allowed to change your mind, years inside design teams learning the craft from the other side of the Figma file, publishing at midnight before a launch, metadata for a page nobody was finding.</p>
+
+  <p>So that's what "do it all" actually means. Not a checklist of tools. The judgement to know which world you're writing in, the craft to do it well, and the range to carry content across both: discoverable, accurate, published, measured. Two worlds that rarely talk to each other. The unicorn is the one who gets them talking.</p>
+
+</div>
+
+<div class="article-cta">
+  <div class="article-cta-inner">
+    <h3>Want to see the<br><em>unicorn's work?</em></h3>
+    <a href="index.html" class="cta-btn">View portfolio &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <p>&#169; 2026 Christine Haiss &middot; Senior Content Designer &middot; <a href="index.html">Portfolio</a> &middot; <a href="mailto:haisschristine@gmail.com">haisschristine@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
